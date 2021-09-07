@@ -13,12 +13,12 @@ const Counter = () => {
   return (
     <div className="Counter">
       <h2> Counter Component </h2>
-
-      <p> You clicked {count} times</p>
       <p>
         {" "}
         Hello, {name} {setName}
       </p>
+
+      <p> You clicked {count} times</p>
 
       <button onClick={() => setCount(count + 1)}> + </button>
       <button onClick={() => subtract()}> - </button>
