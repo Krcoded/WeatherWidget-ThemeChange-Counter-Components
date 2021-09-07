@@ -13,19 +13,19 @@ function App() {
 
   return (
     <div className={"App " + theme}>
-      <h1>React - state and events</h1>
-      <Counter />
-
+      <h1>React - State & Events</h1>
       <select onChange={toggleTheme}>
         <option value="light"> Light </option>
         <option value="dark"> Dark </option>
       </select>
 
+      <Counter />
+
       <button onClick={() => setUnit("C")}> °C </button>
       <button onClick={() => setUnit("F")}> °F </button>
 
       {/* ADD THE WEATHER WIDGET COMPONENT */}
-      <div>
+      <div className="temp">
         <WeatherWidget city="Miami" icon="" celsius={29} unit={unit} />
         <WeatherWidget city="Mexico City" icon="⛈️" celsius={17} unit={unit} />
         <WeatherWidget city="Berlin" icon="️" celsius={20} unit={unit} />

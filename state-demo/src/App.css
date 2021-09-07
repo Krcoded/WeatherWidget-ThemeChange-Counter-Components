@@ -1,6 +1,6 @@
 .dark {
   background-color: rgb(43, 41, 41);
-  height: 100vh;
+  height: 100%;
   width: 100%;
   color: white;
   padding: 5%;
@@ -8,12 +8,18 @@
 
 .light {
   background-color: rgb(255, 255, 255);
-  height: 100vh;
+  height: 100%;
   width: 100%;
   color: black;
   padding: 5%;
 }
 
 .Counter {
-  padding: 15%;
+  padding: 10%;
+}
+
+.temp {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px;
 }
