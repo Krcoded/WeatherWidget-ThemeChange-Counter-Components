@@ -1,38 +1,35 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Counter from "./components/Counter";
+import WeatherWidget from "./components/WeatherWidget";
 import { useState } from "react";
 
 function App() {
   const [theme, setTheme] = useState("light");
-
-  // const changeTheme = () => {
-  //   if (theme === "dark") {
-  //     setTheme("light");
-  //   } else {
-  //     setTheme("dark");
-  //   }
-  // };
+  const [unit, setUnit] = useState("C");
 
   const toggleTheme = (event) => {
     setTheme(event.target.value);
   };
 
   return (
-    <div className={` ` + theme}>
-      <div className="contatiner mt-5">
-        <h2> App Theme Component </h2>
-        {/* 
-        <button onClick={() => changeTheme()}>
-          Click to change {theme === "light" ? "dark" : "light"}
-        </button> */}
+    <div className={"App " + theme}>
+      <h1>React - state and events</h1>
+      <Counter />
 
-        <select onChange={(e) => toggleTheme(e)}>
-          <option value="light"> Light </option>
-          <option value="dark"> Dark </option>
-        </select>
+      <select onChange={toggleTheme}>
+        <option value="light"> Light </option>
+        <option value="dark"> Dark </option>
+      </select>
 
-        <Counter />
+      <button onClick={() => setUnit("C")}> °C </button>
+      <button onClick={() => setUnit("F")}> °F </button>
+
+      {/* ADD THE WEATHER WIDGET COMPONENT */}
+      <div>
+        <WeatherWidget city="Miami" icon="" celsius={29} unit={unit} />
+        <WeatherWidget city="Mexico City" icon="⛈️" celsius={17} unit={unit} />
+        <WeatherWidget city="Berlin" icon="️" celsius={20} unit={unit} />
+        <WeatherWidget city="Barcelona" icon="️" celsius={28} unit={unit} />
       </div>
     </div>
   );
