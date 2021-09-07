@@ -13,6 +13,7 @@ const Counter = () => {
   return (
     <div className="Counter">
       <h2> Counter Component </h2>
+
       <p> You clicked {count} times</p>
       <p>
         {" "}
